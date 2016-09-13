@@ -1,0 +1,46 @@
+input[type='text'], input[type='submit'], input[type='password'], input[type='tel'], input[type='email'], textarea, select { border: 1px solid #CCC; padding:7px; }
+input[type='submit'] {background-color: $color1; color:$white; @extend #transition; padding-left:20px; padding-right:20px; }
+input[type='submit']:hover {background-color: lighten($color1,20%);}
+.widget_wysija input[type='text']{ width:100%; }
+.widget_wysija input[type='submit'] { border: 1px solid $color1; }
+
+form.wpcf7-form{
+	input[type='text'], input[type='submit'], input[type='password'], input[type='tel'], input[type='email'], textarea, select {float:left; width:100%; }
+	input[type='checkbox'] {width:inherit; color:$color1;}
+	input[type='radio'] {width:inherit; float:inherit;}
+	input.wysija-submit  {border:0px;}
+	
+	input.wpcf7-submit {color: $white; background-color: $color1; float:right; @extend #transition;}
+	input.wpcf7-submit:hover {background-color: lighten($color1, 20%)}
+	.form-row-first {width:100% !important;}
+	.variations_form {min-width:90%;}
+	.wpcf7-response-output {float:left;}
+}
+.wpcf7-not-valid-tip {float:left; }
+
+@media (min-width:720px){
+	input.wpcf7-submit {width:34%; }
+}
+
+/* WYSIJA */
+p.wysija-paragraph {
+    float: left;
+    width: 80%;
+	margin: 0px !important; padding:0px;
+}
+.wysija-submit{
+	float: left;
+    width: 20% !important;
+	margin: 0px; padding:0px;
+}
+.shortcode_wysija input, .shortcode_wysija textarea, .shortcode_wysija select {padding:6px 5%; font-size:initial; font-weight:normal;}
+.wysija-input {opacity:0.9; color:$color1;}
+.widget_wysija_cont .wysija-submit {margin-top:0px; opacity:0.9; padding:6px 5%; font-size:initial; background-color:$color1;}
+.wysija-submit:hover {background-color:lighten($color1,15%);}
+
+.wysija_ipro_box {background-color:$white; opacity:0.9; border: 1px solid $white; color:$color1; padding:6px 5%; font-size:initial; font-weight:normal; }
+.widget_wysija_cont .allmsgs .updated { @extend .wysija_ipro_box }
+.formError { @extend .wysija_ipro_box}
+.allmsgs { @extend .wysija_ipro_box }
+.formError .formErrorContent, .allmsgs .error { background:none; border:0px; color: $color1; font-size:14px; font-family:Verdana; width:initial;}
+.formError { top:50px !important; right:10px !important; left: initial !important; width:300px;}

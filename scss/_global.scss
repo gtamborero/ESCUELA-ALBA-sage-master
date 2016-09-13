@@ -1,0 +1,192 @@
+/* IPROJECT STYLES */
+* { @extend .minline; border: 0px solid transparent;}
+body {background-color: $body-background-color; font-family:Roboto; font-weight:300; font-size:1.6rem; min-width: 350px;}
+
+a {color:$black;}
+a:hover {text-decoration:none;}
+
+.realsize img {width:inherit;}
+.maxsize img {width:100%; }
+.valigntop img {vertical-align: top;}
+.valigntop {vertical-align: top;}
+.valigncenter {vertical-align: middle;}
+.valigncenter img {vertical-align: middle;}
+.hr  { border: 0px;  height: 8px; width:100%; float:left;}
+
+/* FONTS */
+.small {font-size:90%;}
+.big {font-size:115%;}
+
+/* COLORS */
+.bgcolor1 {background-color: $color1;}
+.bgcolor2 {background-color: $color2;}
+.color1 { color: $color1; }
+.color2{ color: $color2; }
+.white {color:$white;}
+.black {color:$black;}
+.darkgrey {color:#666;}
+.grey {color:#999;}
+.red {color:#F11;}
+.orange {color:#F95A00;}
+.lightgrey {color:#ddd;}
+.bgwhite {background-color:$white;}
+.bgblack {background-color:$black;}
+.bggrey {background-color:#777;}
+.bglightgrey {background-color:#eee;} 
+.bgdarkgrey {background-color:#222;} 
+
+/* TEXT STYLES */
+.light {font-weight: 200 !important; }
+.normal {font-weight: normal;}
+.normalstrong {font-weight: 400 !important;}
+.strong {font-weight: bold !important; }
+.italic {font-style: italic;}
+.tachado { text-decoration:line-through; }
+.underline { border-bottom:1px solid $white; }
+.dashed { border-bottom:2px dashed #d77788; }
+
+/* DISPLAYS */
+.divcenter { display: table; text-align: center;}
+.textcenter { text-align: center; }
+.textleft { text-align: left; }
+.textright { text-align: right; }
+.textjustify{ text-align: justify; }
+.floatleft {float:left;}
+.floatright {float:right;}
+.displayinline { width:100%; margin: 0 auto;}
+.absolute { position:absolute;}
+
+
+/* FONT LINE HEIGHTS */
+.minline {line-height: 1.3em;}
+.medline {line-height: 1.5em;}
+.maxline {line-height: 2em;}
+
+/* ALIGNS */
+.left10{margin-left:10%;}
+.left15{margin-left:17%;}
+.left20{margin-left:20%;}
+.left25{margin-left:25%;}
+.left30{margin-left:30%;}
+.left40{margin-left:40%;}
+.left50{margin-left:50%;}
+.left60{margin-left:60%;}
+.right5{margin-right:5%;}
+.right10{margin-right:10%;}
+.right20{margin-right:20%;}
+.right30{margin-right:30%;}
+.right40{margin-right:40%;}
+.right50{margin-right:50%;}
+
+/* WIDTHS */
+.width10 { width:10%; position: relative; }
+.width20 { width:20%; position: relative;}
+.width25 { width:25%; position: relative;}
+.width30 { width:30%; position: relative;}
+.width33 { width:33.3%; position: relative;}
+.width40 { width:40%; position: relative;}
+.width45 { width:45%; position: relative;}
+.width50 { width:50%; position: relative;}
+.width55 { width:55%; position: relative;}
+.width60 { width:60%; position: relative;}
+.width65 { width:65%; position: relative;}
+.width70 { width:70%; position: relative;}
+.width80 { width:80%; position: relative;}
+.width90 { width:90%; position: relative;}
+.width95 { width:95%; position: relative;}
+.width100 { width:100%; position: relative; float:left;}
+
+/* CLEARERS */
+.clear {clear:both;}
+.clearright {clear:right;}
+.clearleft {clear:left;}
+.clearboth {clear:both;}
+
+/* PADDINGS */
+.minpad {padding: $min;}
+.medpad {padding:0% $med;}
+.maxpad {padding:0% $max;}
+.nopadtop {padding-top:$no;}
+.minpadtop {padding-top:$min;}
+.medpadtop {padding-top:$med;}
+.maxpadtop {padding-top:$max;}
+.minpadbottom {padding-bottom:$min;}
+.medpadbottom {padding-bottom:$med;}
+.maxpadbottom {padding-bottom:$max;}
+.minpadleft {padding-left:$min;}
+.medpadleft {padding-left:$med;}
+.maxpadleft {padding-left:$max;}
+.minpadright {padding-right:$min;}
+.medpadright {padding-right:$med;}
+.maxpadright {padding-right:$max;}
+
+/* SPACINGS */
+.minspacetop {margin-top:$min;}
+.medspacetop {margin-top:$med;}
+.maxspacetop {margin-top:$max;}
+.minspacebottom {margin-bottom:$min;}
+.medspacebottom {margin-bottom:$med;}
+.maxspacebottom {margin-bottom:$max;}
+.minspaceleft {margin-left:$min;}
+.medspaceleft {margin-left:$med;}
+.maxspaceleft {margin-left:$max;}
+.minspaceright {margin-right:$min;}
+.medspaceright {margin-right:$med;}
+.maxspaceright {margin-right:$max;}
+.minspace {margin:0% $min;}
+.medspace {margin:0% $med;}
+.maxspace {margin:0% $max;}
+
+/* OPACITYS */
+.opacity1 {opacity: 0.1; transition: 600ms;}
+.opacity1:hover {opacity: 1; transition: 600ms;}
+.opacity2 {opacity: 0.2; transition: 600ms;}
+.opacity2:hover {opacity: 1; transition: 600ms;}
+.opacity3 {opacity: 0.3; transition: 600ms;}
+.opacity3:hover {opacity: 1; transition: 600ms;}
+.opacity4 {opacity: 0.4; transition: 600ms;}
+.opacity4:hover {opacity: 1; transition: 600ms;}
+.opacity5 {opacity: 0.5; transition: 600ms;}
+.opacity5:hover {opacity: 1; transition: 600ms;}
+.opacity6 {opacity: 0.6; transition: 600ms;}
+.opacity6:hover {opacity: 1; transition: 600ms;}
+.opacity7 {opacity: 0.7; transition: 600ms;}
+.opacity7:hover {opacity: 1; transition: 600ms;}
+.opacity8 {opacity: 0.8; transition: 600ms;}
+.opacity8:hover {opacity: 1; transition: 600ms;}
+.opacity9 {opacity: 0.9; transition: 600ms;}
+.opacity9:hover {opacity: 1; transition: 600ms;}
+
+/* SHADOWS */
+.shadow{
+	box-shadow:         -3px 3px 9px 2px #aaa;
+}
+
+/* COLOR LINES */
+.color1line { 
+	border-top: 2px solid $color1; @extend .medspacetop, .medpadbottom;
+}
+.color2line { 
+	border-top: 2px solid $color2; @extend .medspacetop, .medpadbottom;
+}
+
+/* TRANSITION */
+#transition {transition: all 0.5s; }
+
+/* COMMUNITY CUSTOM STYLES */
+ul#groups-list li {display:none;}
+ul#groups-list li.is-member {display:block;}
+ul#groups-list .action {display:none;}
+.item-list-tabs li#groups-all {display:none;}
+.item-list-tabs li#groups-personal {display:none;}
+#groups-dir-list #pag-top, #groups-dir-list #pag-bottom, #group-create-nav {display:none;}
+
+#subnav .feed {display:none;}
+#activity-filter-select {display:none;}
+#group_members-order-select {display:none;}
+#group-dir-search {display:none;}
+#groups-order-select {display:none;}
+#search-members-form {display:none;}
+#item-header #item-header-content {display:none;}
+#item-header #item-actions * {display:none;}
+#bpfb_addLinks {display:none;}

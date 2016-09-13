@@ -1,0 +1,24 @@
+/* NAV BAR */
+.headmenu {float:left; width:100%; text-align:right; opacity:0.8; margin-bottom:-20px;}
+.navbar-right {margin-right:15px; clear:both;}
+
+.navbar-default .navbar-nav a, ul.dropdown-menu {@extend #transition; text-transform:uppercase; }
+
+.navbar-nav li a{padding:14px 30px;}
+
+.navbar-default .navbar-nav a { border-bottom: 5px solid transparent; width:100%; font-weight:bold;}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > .active > a:focus {background-color:$white;   }
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {background-color:inherit; }
+
+.navbar {margin-bottom:0px; border:0px;}
+
+.navbar-default {background-color: inherit; border-color: transparent;}
+
+.navbar-header a > img {max-width:410px; padding:10px;}
+
+.navbar-toggle {margin-top:40px; clear:both;}
+
+ul.nav li.dropdown:hover ul.dropdown-menu{ display: block;  }
+.dropdown-menu li a {padding:12px 24px; z-index:9999; float:left; position:relative;}
