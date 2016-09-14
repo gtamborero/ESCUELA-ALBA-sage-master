@@ -185,3 +185,19 @@ function go_home_on_logout(){
   exit();
 }
 add_action('wp_logout','go_home_on_logout');
+
+// Guardo el campo fecha del custom field dentro del post
+function my_acf_save_post( $post_id ) {
+    $acfDate = get_field('data_dinici', $post_id);
+	$acfPrivacitat = get_field('privacitat', $post_id);
+	//echo $acfDate;
+	//exit (-1);	
+	$my_post = array();
+	$my_post['ID'] = $post_id;
+	$my_post['post_date'] = $acfDate;
+	$my_post['post_status'] = 'private';
+	wp_update_post( $my_post );
+}
+add_action('acf/save_post', 'my_acf_save_post', 20);
+
+?>
