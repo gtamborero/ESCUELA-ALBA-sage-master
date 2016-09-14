@@ -14,9 +14,16 @@
 
 		<?php
 			wp_reset_query();
+			
+			// Set post visibility for logged in / out users
+			if (is_user_logged_in()) { 
+				$showPosts = array('publish','private');
+			}else{
+				$showPosts = 'publish';
+			}
 			$args = array(
 				'post_type'             => 'post',
-				'post_status'           => 'publish',
+				'post_status'           => $showPosts,
 				'posts_per_page'        => '8',
 				'cache_results' => false, // para mejorar rendimiento en dev o prod
 				'update_post_term_cache' => false,
