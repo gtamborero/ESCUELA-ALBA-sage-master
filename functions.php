@@ -195,7 +195,7 @@ function my_acf_save_post( $post_id ) {
 	$my_post = array();
 	$my_post['ID'] = $post_id;
 	$my_post['post_date'] = $acfDate;
-	$my_post['post_status'] = 'private';
+	$my_post['post_status'] = $acfPrivacitat;
 	wp_update_post( $my_post );
 }
 add_action('acf/save_post', 'my_acf_save_post', 20);
