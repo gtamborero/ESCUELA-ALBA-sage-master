@@ -1,6 +1,34 @@
 <div class="iproSidebar iproSidebarUp col-md-3 col-xs-12">
 
-<?php if (current_user_can('edit_posts')){ ?>
+<?php
+
+	if (is_user_logged_in()){ 
+	$current_user = wp_get_current_user(); 
+	?>
+
+	<!-- USER FAST ACCESS -->
+	<section class="widget_categories"><h3>Hola <?php echo $current_user->display_name; ?>!</h3>
+		<ul>
+			<li class="cat-item cat-item-24"><a href="<?php echo home_url('/grups/'); ?>">Els teus grups</a></li>
+			<li class="cat-item cat-item-24"><a href="<?php echo home_url('/grups/'); ?>">Els teu GRUP</a></li>
+			
+			<?php //Get group (first one)
+			$group_ids = groups_get_user_groups($current_user->ID);
+			foreach($group_ids["groups"] as $group_id) { 
+			echo(groups_get_group(array( 'group_id' => $group_id )) -> name . (end($group_ids["groups"]) == $group_id ? '' : ', ' ) ); 
+			}
+ ?>
+			
+			<li class="cat-item"><a href="<?php echo bp_loggedin_user_domain() . "profile/change-avatar/"; ?>">El teu perfil</a></li>
+			<li class="cat-item"><a href="<?php echo wp_logout_url(); ?>">Sortir</a></li>
+		</ul>
+	</section>
+	
+	</section>
+
+<?php }
+	 
+	if (current_user_can('edit_posts')){ ?>
 
 	<!-- User post system -->
 	<section class="widget_categories"><h3>Publicar Novetats</h3>		
@@ -10,8 +38,8 @@
 		</ul>
 	</section>
 
-<?php }
-
+<?php }	
+	 
 	if (is_user_logged_in() AND (!is_front_page())){ ?>
 
 	<!-- LAST POSTS -->

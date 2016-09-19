@@ -148,7 +148,7 @@ function my_login_redirect( $redirect_to, $request, $user ) {
 			// redirect them to the default place
 			return $redirect_to;
 		} else {
-			return home_url('/groups/');
+			return home_url('/grups/');
 		}
 	} else {
 		return $redirect_to;

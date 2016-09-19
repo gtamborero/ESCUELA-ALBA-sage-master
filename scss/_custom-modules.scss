@@ -74,6 +74,7 @@ table#wp-calendar { width:100%; background-color:$white; border-spacing: 4px; pa
 .wp-post-image {width:50%; height:auto;}
 /*.fancybox img {width:100%;}*/
 
+.twitterwidget iframe {width:100% !important;}
 
 /* MEDIA QUERIES */
 @media (max-width:992px){

@@ -22,13 +22,13 @@
 			/* MOSTRAR UNA U OTRA COSA EN EL BOTÓN DE LOGIN SI ADMIN / USER / ANONIMO */
 			if (is_user_logged_in() AND (!is_super_admin())){ 
 				$current_user = wp_get_current_user(); 
-				echo '<a href="' . home_url('/groups/') . '"><div class="button ">Hola ' . $current_user->display_name . '</div></a>';
+				echo '<a href="' . home_url('/grups/') . '"><div class="button ">Hola ' . $current_user->display_name . '</div></a>';
 			}
 			if (is_user_logged_in() AND (is_super_admin())){ 
 				echo '<a href="' . home_url('/wp-admin/') . '"><div class="button ">Hola Administrador</div></a>';
 			}
 			if (!is_user_logged_in()) echo'<br /><a href="/wp-admin"><div class="button ">Accés usuaris</div></a>'; 
-			if (is_user_logged_in()) echo'<br /><a href="' . wp_logout_url() . '">Logout</a>'; 
+			//if (is_user_logged_in()) echo'<br /><a href="' . wp_logout_url() . '">Logout</a>'; 
 			?>
 			<div class="text-center">Cancó amunt</div>
 			</div>	
