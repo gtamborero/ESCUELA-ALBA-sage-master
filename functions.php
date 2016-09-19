@@ -55,15 +55,9 @@ function iproRenderNoticias($post){
 			
 			<div class="iproRenderNoticias width100">
 			<a class="fullLink" href="<?php echo get_the_permalink(); ?>"></a>
-			<div class="color2" style="padding:0px 10px 8px 12px"><?php $terms = get_the_term_list($post->ID,'category');  echo strip_tags( $terms );?></div>
+			<div class="color2" style="padding:0px 10px 8px 12px"><?php $terms = get_the_term_list($post->ID,'category' , '', ' / ');  echo strip_tags( $terms );?></div>
 				<div class="col-md-5 col-sm-5 col-xs-12 maxsize">
 					<?php 
-						/*if ( has_post_thumbnail($post->ID) ){ 
-							echo get_the_post_thumbnail($post->ID);
-						}else{
-							// Imagen genérica de ESCOLA ALBA
-							echo '<img src="'. get_template_directory_uri() . '/dist/images/thumb-escola-ciutat-alba.jpg' . '" />';
-						}*/
 						$destacada = get_field('imatge-destacada');
 						if( $destacada ){ ?>
 							<img src="<?php echo $destacada['url']; ?>" alt="<?php echo $destacada['alt']; ?>" />
@@ -75,8 +69,8 @@ function iproRenderNoticias($post){
 						
 				</div>
 				<div class="col-md-7 col-sm-5 col-xs-12" style="padding-left:15px;">
-						<div class="medpadtop iproTitle darkgrey" style="text-transform:uppercase;"><?php echo get_the_title($post->ID); ?></div>
-						<div class="color1"><?php echo get_the_date(); ?></div>
+						<div class="medpadtop iproTitle darkgrey" style="text-transform:uppercase;"><?php if ( get_post_status ( $post->ID ) == 'private' ) echo '<img style="width:15px; margin-top:-4px;" src="'. get_template_directory_uri() . '/dist/images/locked.png' . '" />'; ?> <?php echo get_the_title($post->ID); ?></div>
+						<div class="color1 minpadbottom"><?php echo get_the_date(); ?></div>
 						<!--<div class="iproText color1"><?php if (has_excerpt( $post->ID )) echo get_the_excerpt($post->ID); ?><br />&nbsp;</div>-->
 						<div class="iproText"><?php echo get_the_excerpt(); ?></div>
 						<!--<div class="iproDown color1 strong">LEER MÁS ></div>-->

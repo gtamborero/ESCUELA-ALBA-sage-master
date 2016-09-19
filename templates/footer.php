@@ -2,8 +2,11 @@
 
 	<div class="width100" style="background-color:#f8f9fb;">
 		<div class="container darkgrey textcenter minpadtop medpadbottom">
-			<div style="margin:0% 6%;">
-			
+			<div class="col-sm-8 col-xs-12">
+				5 logos
+			</div>		
+			<div class="col-sm-4 col-xs-12 pull-right">
+				<?php dynamic_sidebar('footer'); ?>
 			</div>
 		</div>
 	</div>

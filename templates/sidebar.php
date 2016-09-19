@@ -49,8 +49,6 @@
 <br />&nbsp;<br />
 
 <?php
-
-
 dynamic_sidebar('sidebar-primary'); 
 ?>
 </div>
