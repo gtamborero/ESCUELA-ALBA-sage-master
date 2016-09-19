@@ -86,33 +86,16 @@ function iproRenderNoticias($post){
 <?php
 }
 
-function iproNoticias($categoria = 'destacadas', $excludePostId = ''){ ?>
-	<!-- NOTICIAS -->
-<div class="text-center bg1container">
-	<?php
-	
-		wp_reset_query();
-		$args = array(
-			'post_type'             => 'post',
-			'post_status'           => 'publish',
-			'category_name'         => $categoria,
-			'posts_per_page'        => '2',
-			'post__not_in'			=> array($excludePostId),
-			'cache_results' => false, // para mejorar rendimiento en dev o prod
-			'update_post_term_cache' => false,
-			'update_post_meta_cache' => false,
-			'no_found_rows' => true, // para mejorar rendimiento si no existe paginacion
-		);		
-		$noticias = new WP_Query($args);
-		
-		while ( $noticias->have_posts() ) { 
-			$noticias->the_post();
-			iproRenderNoticias ($noticias);
-		}
-		
-	?>
-</div>
-<!-- FIN NOTICIAS -->
+function iproRenderNoticiasSidebar($post){
+?>
+		<div class="width100 bgwhite">
+
+			<div class="iproRenderNoticiasSidebar width100 bgwhite">
+			<a class="fullLink" href="<?php echo get_the_permalink(); ?>"></a>
+				<div class="darkgrey text-left"><?php if ( get_post_status ( $post->ID ) == 'private' ) echo '<img style="width:15px; margin-top:-4px;" src="'. get_template_directory_uri() . '/dist/images/locked.png' . '" />'; ?> <?php echo get_the_title($post->ID); ?></div>
+				<div class="color1 text-right"><?php echo get_the_date(); ?></div>
+			</div>
+		</div>
 <?php
 }
 

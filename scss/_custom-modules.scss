@@ -1,5 +1,6 @@
 .iproRenderNoticias {padding:20px 15px; float:left; @extend #transition;}
 .iproRenderNoticias:hover {background-color:$white;}
+.iproRenderNoticiasSidebar {padding: 14px; float:left;}
 .iproTitle {font-size:140%; text-transform:uppercase;}
 .iproLead {font-size:115%; color:$darkgrey;}
 .iproText { @extend .maxpadbottom; }
@@ -12,10 +13,10 @@
 	.widget_categories .current-cat a {color:$color1; font-weight:bold;}
 	
 	.widget_categories h3 {@extend .iproTitle; color:$color1; font-weight:bold !important;}
-	.widget_categories ul {@extend .bgwhite, .textcenter; }
+	.widget_categories ul {@extend .bgwhite }
 	.widget_categories {padding-top:40px;}	
 	
-	.iproTitle {font-size:115%; font-weight:normal; text-align:center; padding-bottom:5%;}
+	.iproTitle {font-size:115%; font-weight:normal; padding-bottom:5%;}
 	.iproLinks {clear:both; width:100%; padding-left:10%;}
 	ul {margin: 0.4em 0; padding: 0 1em; list-style: none;
 		li {padding:3% 0% 3% 7%; }
