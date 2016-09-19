@@ -36,7 +36,7 @@
 	</div>	
 	
 	<!-- NAV BAR -->
-	<div class="width100" style="background-color:#badeee;">
+	<div class="width100 bgcolor1" >
 		<div class="container">	
 			<nav class="collapse navbar-collapse navbar-left" role="navigation">
 

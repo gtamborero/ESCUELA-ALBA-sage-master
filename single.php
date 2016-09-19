@@ -5,7 +5,7 @@
 		<div class="iproTitle pull-left color1"><?php the_title(); ?></div>
 		<div class="width100  color2"><?php $terms = get_the_term_list($post->ID,'category');  echo strip_tags( $terms );?></div>
 		<div class="width100 iproLead minpadtop"><?php the_field('lead'); ?></div>
-		<div class="width100 textleft minpadtop">
+		<div class="width100 textleft minpadtop maxsize">
 			<?php 
 				$destacada = get_field('imatge-destacada');
 				if( $destacada ){ ?>

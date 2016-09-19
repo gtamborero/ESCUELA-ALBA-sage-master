@@ -3,7 +3,7 @@
  * Template Name: INICIO
  */
 ?>
-<?php /* layerslider(1); */ ?>
+<?php  layerslider(1); ?>
 </div>
 
 

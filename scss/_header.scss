@@ -4,7 +4,7 @@
 
 .navbar-default .navbar-nav a, ul.dropdown-menu {@extend #transition; text-transform:uppercase; }
 
-.navbar-nav li a{padding:14px 30px;}
+.navbar-nav li a{padding:22px 30px 17px;}
 
 .navbar-default .navbar-nav a { border-bottom: 5px solid transparent; width:100%; font-weight:bold;}
 
@@ -22,3 +22,9 @@
 
 ul.nav li.dropdown:hover ul.dropdown-menu{ display: block;  }
 .dropdown-menu li a {padding:12px 24px; z-index:9999; float:left; position:relative;}
+
+.navbar-nav a {color:#fff !important;}
+.navbar-nav a:hover {color:#666 !important;}
+.dropdown-menu a {color:#666 !important;}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: lighten($color1,25%);}
