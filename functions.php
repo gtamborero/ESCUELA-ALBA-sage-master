@@ -139,6 +139,24 @@ add_action('admin_enqueue_scripts', 'admin_style');
 // DISABLE ADMIN BAR ON FRONT USERS
 add_filter('show_admin_bar', '__return_false');
 
+// Get current user group slug 
+// Returns group slug + name + integer total groups subscribed by user
+function get_current_user_groups( $userId ){
+	$group_ids = groups_get_user_groups( $userId );
+	$counter = 0;
+	foreach($group_ids["groups"] as $group_id) { 
+		$slug = groups_get_group(array( 'group_id' => $group_id )) -> slug; 
+		$name = groups_get_group(array( 'group_id' => $group_id )) -> name;
+		$counter++;
+	}
+	$object = array (
+		'slug' => $slug,
+		'name' => $name,
+		'counter' => $counter,
+	);
+	return $object;
+}
+
 // REDIRECT TO Groups ON LOGIN
 function my_login_redirect( $redirect_to, $request, $user ) {
 	//is there a user to check?
@@ -148,7 +166,12 @@ function my_login_redirect( $redirect_to, $request, $user ) {
 			// redirect them to the default place
 			return $redirect_to;
 		} else {
-			return home_url('/grups/');
+			$groupObject = get_current_user_groups($user->ID);
+			if ( $groupObject ['counter'] >1 ) { 
+				return home_url('/grups/');
+			}else{
+				return home_url('/grups/' . $groupObject['slug']);
+			}
 		}
 	} else {
 		return $redirect_to;

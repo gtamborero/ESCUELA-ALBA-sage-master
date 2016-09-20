@@ -9,21 +9,18 @@
 	<!-- USER FAST ACCESS -->
 	<section class="widget_categories"><h3>Hola <?php echo $current_user->display_name; ?>!</h3>
 		<ul>
-			<li class="cat-item cat-item-24"><a href="<?php echo home_url('/grups/'); ?>">Els teus grups</a></li>
-			<li class="cat-item cat-item-24"><a href="<?php echo home_url('/grups/'); ?>">Els teu GRUP</a></li>
 			
-			<?php //Get group (first one)
-			$group_ids = groups_get_user_groups($current_user->ID);
-			foreach($group_ids["groups"] as $group_id) { 
-			echo(groups_get_group(array( 'group_id' => $group_id )) -> name . (end($group_ids["groups"]) == $group_id ? '' : ', ' ) ); 
+			<?php //Get first group or print groups
+			$groupObject = get_current_user_groups($current_user->ID);
+			if ( $groupObject ['counter'] >1 ) { 
+				echo '<li class="cat-item"><a href="' . home_url("/grups/") . '">Els teus grups</a></li>';
+			}else{
+				echo '<li class="cat-item"><a href="' . home_url("/grups/" . $groupObject['slug']) . '">Grup ' . $groupObject['name'] . '</a></li>';				
 			}
- ?>
-			
+?>
 			<li class="cat-item"><a href="<?php echo bp_loggedin_user_domain() . "profile/change-avatar/"; ?>">El teu perfil</a></li>
 			<li class="cat-item"><a href="<?php echo wp_logout_url(); ?>">Sortir</a></li>
 		</ul>
-	</section>
-	
 	</section>
 
 <?php }
