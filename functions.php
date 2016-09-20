@@ -200,4 +200,23 @@ function my_acf_save_post( $post_id ) {
 }
 add_action('acf/save_post', 'my_acf_save_post', 20);
 
-?>
+
+// define the bp_group_has_members callback 
+/*function filter_bp_group_has_members( $members_template_has_members, $members_template ) { 
+	//var_dump ($members_template);
+	// $members_template nos devuelve todos los users e información interesante.
+	// Tengo que pillar cada user, ver que tipo de usuario es y solo mostrar a los alumnos
+	// rehacer el array eliminando usuarios que no quiero ... pero no se como devolver esto con este filtro
+	// BP_Groups_Group_Members_Templates
+	
+	//$soloelia = array();
+	//$soloelia = ["ID"]=> string(2) "28" ["user_login"]=> string(4) "elia" ["user_pass"]=> string(34) "$P$BLK9vlLiWEKfqDA2nGTkyOAjtzVRnu1" ["user_nicename"]=> string(4) "elia" ["user_email"]=> string(17) "elia@iproject.cat" ["user_url"]=> string(0) "" ["user_registered"]=> string(19) "2016-09-06 09:40:43" ["user_activation_key"]=> string(0) "" ["user_status"]=> string(1) "0" ["display_name"]=> string(9) "elia elia" ["id"]=> string(2) "28" ["fullname"]=> string(9) "elia elia" ["user_id"]=> int(28) ["is_admin"]=> int(0) ["is_mod"]=> int(0) "";
+	$members_template = array (
+		'ID' => "28",
+	);
+	return $members_template_has_members;
+}; 
+add_filter( 'bp_group_has_members', 'filter_bp_group_has_members', 10, 2 ); */
+                    
+	
+	
