@@ -3,7 +3,7 @@
 	<div class="width100" style="background-color:#fff;">
 		<div class="container darkgrey textcenter minpadtop medpadbottom">
 			<div class="col-sm-8 col-xs-12 minpadtop minspacetop">
-				<div style="width:80%; margin-left:10%;">
+				<div style="width:80%; margin-left:10%; text-align:center;">
 				
 				<!-- LOGOS -->
 					<div class="col-md-6 col-sm-6 col-xs-6 text-center maxpadbottom">
