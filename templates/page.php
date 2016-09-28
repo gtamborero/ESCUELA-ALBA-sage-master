@@ -27,8 +27,8 @@
 			<?php
 			$images = get_field('galeria');
 			if( $images ): ?>
-				<div class="iproTitle color1 minpadtop minpadbottom">Galeria de fotos</div>
-				<div class="width100 bgwhite minpad minpadtop minpadbottom minspacebottom">
+				<div class="iproTitle  color1 minpadtop minpadbottom">Galeria de fotos</div>
+				<div class="gallery width100 bgwhite minpad minpadtop minpadbottom minspacebottom">
 				<?php foreach( $images as $image ): ?>
 					<div class="col-md-3 col-xs-6">
 						<a href="<?php echo $image['url']; ?>">

@@ -71,8 +71,8 @@ table#wp-calendar { width:100%; background-color:$white; border-spacing: 4px; pa
 	tfoot td#next {text-align:right;}
 }
 
-.wp-post-image {width:50%; height:auto;}
-/*.fancybox img {width:100%;}*/
+.wp-post-image {width:100%; height:auto;}
+.gallery .fancybox img {width:100%;} 
 
 .twitterwidget iframe {width:100% !important;}
 
