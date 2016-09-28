@@ -1,9 +1,33 @@
 </div></div>
 
-	<div class="width100" style="background-color:#f8f9fb;">
+	<div class="width100" style="background-color:#fff;">
 		<div class="container darkgrey textcenter minpadtop medpadbottom">
-			<div class="col-sm-8 col-xs-12">
-				5 logos
+			<div class="col-sm-8 col-xs-12 minpadtop minspacetop">
+				<div style="width:80%; margin-left:10%;">
+				
+				<!-- LOGOS -->
+					<div class="col-md-6 col-sm-6 col-xs-6 text-center maxpadbottom">
+						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/menjador.jpg">
+						<br /><br />MENJADOR
+					</div>
+					<div class="col-md-6 col-sm-6 col-xs-6 text-center maxpadbottom">
+						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/extraescolars.jpg">
+						<br /><br />EXTRAESCOLARS
+					</div>
+					
+					<div class="col-md-4 col-sm-6 col-xs-6 text-center maxpadbottom">
+						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/sos.jpg">
+						<br /><br />SOS ENSENYAMENT
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6 text-center maxpadbottom">
+						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/som.jpg">
+						<br /><br />SOM ESCOLA
+					</div>
+					<div class="col-md-4 col-sm-6 col-xs-6 text-center maxpadbottom">
+						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/sos-menjador.jpg">
+						<br /><br />SOS MENJADOR
+					</div>
+				</div>
 			</div>		
 			<div class="col-sm-4 col-xs-12 pull-right">
 				<?php dynamic_sidebar('footer'); ?>
@@ -13,17 +37,23 @@
 	
 	<!-- FOOTER -->
 	<a name="contacto"></a>
-	<div class="width100 bgcolor1">
+	<div class="width100 bgcolor1 minpadtop minpadbottom">
 		<div class="container white ">
 			<div class="col-sm-4 col-xs-12 responsivefootheight">
-			<a href="/politica-cookies" class="white">Política de Cookies</a> &nbsp; <a href="/politica-privacitat" class="white">Avis Legal</a>
-			</div>
-			<div class="col-sm-4 col-xs-12 text-center minpadtop" style="padding-bottom:1%;>
 				<a href="<?= esc_url(home_url('/')); ?>">
-					<!--<img src="<?= get_template_directory_uri(); ?>/dist/images/logo-escola-ciutat-alba.png">-->
+					<img style="max-width:240px; width:80%;" src="<?= get_template_directory_uri(); ?>/dist/images/escola-ciutat-alba.png">
 				</a>
+			</div>
+			<div class="col-sm-4 col-xs-12 text-center minpadtop medline">
+			C/Pere Ferrer, 5, 08195 Sant Cugat del Vallès - 93.578.40.33 - a8064118@xtec.cat<br />
+			<a href="/politica-cookies" class="white">Política de Cookies</a> &nbsp; <a href="/politica-privacitat" class="white">Avis Legal</a>
+			
+				
 			</div>	
-			<div class="col-sm-4 col-xs-12 textright">
+			<div class="col-sm-4 col-xs-12 minpadtop textright medline">
+			<a href=""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/twitter.png"></a>
+			<a href=""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/mail.png"></a>
+			<a href=""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/facebook.png"></a>
 			Contacte
 			</div>		
 		</div>
