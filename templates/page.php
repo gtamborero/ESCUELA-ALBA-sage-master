@@ -87,7 +87,7 @@
 wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); 
 
 if (bp_is_blog_page()) { 
-	include get_template_directory() . "/templates/pagesidebar.php"; 
+	if ($printSidebar) include get_template_directory() . "/templates/pagesidebar.php"; 
 }else{
 	include get_template_directory() . "/templates/sidebar.php";
 }

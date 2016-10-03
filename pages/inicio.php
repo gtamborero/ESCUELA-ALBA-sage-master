@@ -25,6 +25,14 @@
 				'post_type'             => 'post',
 				'post_status'           => $showPosts,
 				'posts_per_page'        => '8',
+				'tax_query' => array(
+					array(
+						'taxonomy'  => 'category',
+						'field'     => 'slug',
+						'terms'     => 'festius', // exclude items media items in the news-cat custom taxonomy
+						'operator'  => 'NOT IN')
+				),
+				
 				'cache_results' => false, // para mejorar rendimiento en dev o prod
 				'update_post_term_cache' => false,
 				'update_post_meta_cache' => false,
