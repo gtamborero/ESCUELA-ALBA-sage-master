@@ -16,6 +16,7 @@ a:hover {text-decoration:none;}
 /* FONTS */
 .small {font-size:90%;}
 .big {font-size:115%;}
+h3 { color:$color1;}
 
 /* COLORS */
 .bgcolor1 {background-color: $color1;}
@@ -58,8 +59,8 @@ a:hover {text-decoration:none;}
 
 
 /* FONT LINE HEIGHTS */
-.minline {line-height: 1.3em;}
-.medline {line-height: 1.5em;}
+.minline {line-height: 1.5em;}
+.medline {line-height: 1.7em;}
 .maxline {line-height: 2em;}
 
 /* ALIGNS */

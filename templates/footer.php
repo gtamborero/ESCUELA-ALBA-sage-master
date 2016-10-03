@@ -8,7 +8,7 @@
 				<!-- LOGOS -->
 					<div class="col-md-6 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/menjador.jpg">
-						<br /><br />MENJADOR
+						<br /><br />ESPAI MIGDIA
 					</div>
 					<div class="col-md-6 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/extraescolars.jpg">
@@ -44,7 +44,7 @@
 					<img style="max-width:240px; width:80%;" src="<?= get_template_directory_uri(); ?>/dist/images/escola-ciutat-alba.png">
 				</a>
 			</div>
-			<div class="col-sm-4 col-xs-12 text-center minpadtop medline">
+			<div class="col-sm-4 col-xs-12 text-center medline">
 			C/Pere Ferrer, 5, 08195 Sant Cugat del Vallès - 93.578.40.33 - a8064118@xtec.cat<br />
 			<a href="/politica-cookies" class="white">Política de Cookies</a> &nbsp; <a href="/politica-privacitat" class="white">Avis Legal</a>
 			

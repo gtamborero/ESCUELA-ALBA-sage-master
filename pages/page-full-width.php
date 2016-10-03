@@ -5,7 +5,7 @@
 while ( have_posts() ): the_post();
 ?>
 </div>
-	<div class="albaContainer col-md-12 col-xs-12 minpadtop minpadbottom">
+	<div class="albaContainer col-md-12 col-xs-12 maxpadtop minpadbottom">
 		<div class="iproTitle pull-left color1"><?php the_title(); ?></div>
 		<div class="width100 iproLead minpadtop"><?php the_field('lead'); ?></div>
 

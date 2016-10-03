@@ -8,7 +8,7 @@
 
 
 	<!-- CATEGORY VIEW -->
-	<div class="albaContainer col-md-9 col-xs-12 medpadtop maxpadbottom">
+	<div class="albaContainer col-md-9 col-xs-12 maxpadtop maxpadbottom">
 	<div class="iproTitle color1 pull-left">NOVETATS</div>
 	<div class="pull-right " style="margin-top:-5px; margin-bottom:10px;"><?php get_search_form(); ?></div>
 

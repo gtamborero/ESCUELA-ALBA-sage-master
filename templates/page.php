@@ -1,5 +1,5 @@
 	<!-- PAGE.PHP PAGE -->
-	<div class="albaContainer col-md-9 col-xs-12 minpadtop minpadbottom">
+	<div class="albaContainer col-md-9 col-xs-12 maxpadtop minpadbottom">
 		<div class="iproTitle pull-left color1"><?php the_title(); ?></div>
 		<div class="width100 iproLead minpadtop"><?php the_field('lead'); ?></div>
 
@@ -38,25 +38,26 @@
 					</div>
 				<?php endforeach; ?>
 				</div>
-			<?php endif; 
-			
-			if( have_rows('descarregas') ): ?>
-			<!-- DOWNLOADS -->
-				<div class="iproTitle color1 minpadbottom">Descàrregues</div>
-				<div class="width100 bgwhite minpad minpadtop minpadbottom">
-					
-				<?php
-					while ( have_rows('descarregas') ) { 
-						the_row();
-						$data = get_sub_field('arxiu_de_descarrega');
-						echo '<div class="width100 minpadtop minpadbottom">
-						<a target="_NEW" href="' . $data['url'] . '">' . $data['title'] . '</a>
-						</div>';
-					};
-				?>		
-				</div>
 			<?php endif; ?>
-				
+			
+			<!-- DOWNLOADS -->
+			<div class="iproDownloads iproTitle color1 minpadbottom">Descàrregues</div>
+			<div class="iproDownloads width100 bgwhite minpad minpadtop minpadbottom">
+			<!-- Oculto por defecto descargas -->
+			<style>div.iproDownloads {display:none;}</style>	
+			<?php
+				while ( have_rows('descarregas') ) { 
+					the_row();
+					$data = get_sub_field('arxiu_de_descarrega');
+					echo '
+					<div class="width100 minpadtop minpadbottom">
+					<a target="_NEW" href="' . $data['url'] . '">' . $data['title'] . '</a>
+					</div>';
+					// Muestro descargas si el primer valor es válido
+					if ($data['url']!="") { echo "<style>div.iproDownloads {display:block;}</style>"; }
+				};
+			?>		
+			</div>
 		</div>
 
 	</div>

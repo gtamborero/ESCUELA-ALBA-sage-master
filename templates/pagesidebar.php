@@ -1,5 +1,5 @@
-<div class="iproSidebar col-md-3 col-xs-12 bgwhite">
-<div class="iproTitle underline maxspacetop maxpadtop color1 strong"><strong><?php echo $ancestorTitle; ?></strong></div>
+<div class="iproSidebar iproSidebarUp col-md-3 col-xs-12">
+<section class="widget_categories"><h3><?php echo $ancestorTitle; ?></h3>
 <?php
 	
 	//el array es cero pinto el $post->ID, sino el que me devuelva el resultado (que es lo mismo)
@@ -14,3 +14,4 @@
 ?>
 
 </div>
+</section>

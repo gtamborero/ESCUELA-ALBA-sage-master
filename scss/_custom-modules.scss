@@ -2,8 +2,7 @@
 .iproRenderNoticias:hover {background-color:$white;}
 .iproRenderNoticiasSidebar {padding: 14px; float:left;}
 .iproTitle {font-size:140%; text-transform:uppercase;}
-.iproLead {font-size:115%; color:$darkgrey;}
-.iproText { @extend .maxpadbottom; }
+.iproLead {font-size:125%; color:$darkgrey; padding-bottom: 15px;}
 .iproSidebar { @extend .white; 
 	a { @extend .color1; }
 	#wp-calendar a {font-weight:bold;}
@@ -43,7 +42,7 @@
 	.current_page_item a{color:$color1; font-weight:bold;}
 }
 .iproSidebarUp {
-    margin-top: -32px;
+    margin-top: 15px;
     z-index: 9999;
 }
 

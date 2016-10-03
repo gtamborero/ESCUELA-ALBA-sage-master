@@ -55,7 +55,7 @@ function iproRenderNoticias($post){
 			
 			<div class="iproRenderNoticias width100">
 			<a class="fullLink" href="<?php echo get_the_permalink(); ?>"></a>
-			<div class="color2" style="padding:0px 10px 8px 12px"><?php $terms = get_the_term_list($post->ID,'category' , '', ' / ');  echo strip_tags( $terms );?></div>
+			<div class="color2 strong" style="padding:0px 10px 8px 12px"><?php $terms = get_the_term_list($post->ID,'category' , '', ' / ');  echo strip_tags( $terms );?></div>
 				<div class="col-md-5 col-sm-5 col-xs-12 maxsize">
 					<?php 
 						$destacada = get_field('imatge-destacada');
@@ -73,7 +73,7 @@ function iproRenderNoticias($post){
 						<div class="color1 minpadbottom"><?php echo get_the_date(); ?></div>
 						<!--<div class="iproText color1"><?php if (has_excerpt( $post->ID )) echo get_the_excerpt($post->ID); ?><br />&nbsp;</div>-->
 						<div class="iproText"><?php echo get_the_excerpt(); ?></div>
-						<!--<div class="iproDown color1 strong">LEER MÁS ></div>-->
+						<img style="width:30px; margin-top:10px;" src="<?php echo get_template_directory_uri() . '/dist/images/plus.png'; ?>" />
 				</div>
 			</div>
 		</div>

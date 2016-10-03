@@ -1,7 +1,13 @@
 .headbutton {
 	display:inline-block; padding:$headbuttonpad; color: $white; background-color:$color1; @extend #transition; font-weight:bold;
 }
-.headbutton:hover {background-color:lighten($color1, 20%); cursor:pointer; @extend #transition}
+.headbutton:hover {background-color:lighten($color1, 20%); cursor:pointer; @extend #transition;}
 .button { @extend .headbutton; padding:$buttonpad; @extend #transition; }
 .button.circle { border-radius:20px; padding: 6px 13px;}
 .button.bordercircle { border-radius:20px; padding: 6px 13px; border:2px solid $color1; color:$color1; font-weight:bold; background-color:transparent;}
+
+.loginbutton { color: $white; background-color:$color1; @extend #transition; border-radius:0px 0px 50% 50%; margin-top:-10px; padding:20px 30px;}
+.loginbutton:hover {background-color:lighten($color1, 20%); cursor:pointer; @extend #transition;}
+
+.albaMusica { text-align:center; padding:6%; margin-top:10px;}
+.albaMusica:hover { background-color: #fff; }
