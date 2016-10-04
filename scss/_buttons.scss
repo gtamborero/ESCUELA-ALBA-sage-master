@@ -13,3 +13,7 @@
 .albaMusica:hover { background-color: #fff; }
 
 .pagechild.current { color:$color1 !important; font-weight:bold !important;}
+
+/* BUDDY BUTTONS DEACTIVATION */
+.button.fav.bp-secondary-action {display:none;}
+.button.acomment-reply.bp-primary-action {display:none;}

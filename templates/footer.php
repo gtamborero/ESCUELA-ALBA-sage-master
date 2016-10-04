@@ -6,27 +6,36 @@
 				<div style="width:80%; margin-left:10%; text-align:center;">
 				
 				<!-- LOGOS -->
+					<a href="">
 					<div class="col-md-6 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/menjador.jpg">
 						<br /><br />ESPAI MIGDIA
 					</div>
+					</a>
+					<a href="">
 					<div class="col-md-6 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/extraescolars.jpg">
 						<br /><br />EXTRAESCOLARS
 					</div>
-					
+					</a>
+					<a href="">
 					<div class="col-md-4 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/sos.jpg">
 						<br /><br />SOS ENSENYAMENT
 					</div>
+					</a>
+					<a href="">
 					<div class="col-md-4 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/som.jpg">
 						<br /><br />SOM ESCOLA
 					</div>
+					</a>
+					<a href="">
 					<div class="col-md-4 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/sos-menjador.jpg">
 						<br /><br />SOS MENJADOR
 					</div>
+					</a>
 				</div>
 			</div>		
 			<div class="col-sm-4 col-xs-12 pull-right">

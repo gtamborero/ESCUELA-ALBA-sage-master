@@ -1,7 +1,9 @@
 	<!-- PAGE.PHP PAGE -->
 	<div class="albaContainer col-md-9 col-xs-12 maxpadtop minpadbottom">
 		<div class="iproTitle pull-left color1"><?php the_title(); ?></div>
-		<div class="width100 iproLead minpadtop"><?php the_field('lead'); ?></div>
+		<?php if (get_field('lead')){ ?>
+			<div class="width100 iproLead minpadtop"><?php the_field('lead'); ?></div>
+		<?php } ?>
 
 		<div class="width100 textleft minpadtop">
 			<?php 
@@ -81,17 +83,14 @@
 	}
 	?>
 	
-<?php 
-wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); 
+	<?php 
+	wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); 
 
-if (bp_is_blog_page()) { 
 	if ($printSidebar){ ?>
-
 	<div class="iproSidebar iproSidebarUp col-md-3 col-xs-12">
 		<section class="widget_categories"><h3><?php echo $ancestorTitle; ?></h3>
 		<ul>
 		<?php
-			
 		//Listo todos los títulos de página de la página padre definida $parentId
 		$args = array(
 			'post_parent' => $parentId,
@@ -110,6 +109,12 @@ if (bp_is_blog_page()) {
 				echo $child->post_title;
 				echo '</a></li>';
 			}
+			// Caso estrambotico: Si estamos en el apartado de ampa mostramos link a documentos:
+			if ($parentId == 160){
+				echo '<li><a class="pagechild';
+				if (173 == get_the_ID()) echo ' current';
+				echo '" href="/doc-privat/assemblees/">Documents</a></li>';
+			}
 		}
 			
 		?>
@@ -119,5 +124,6 @@ if (bp_is_blog_page()) {
 		
 		
 	<?php	
+	}else{
+		include get_template_directory() . "/templates/sidebar.php";
 	}
-}
