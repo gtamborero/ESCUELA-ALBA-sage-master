@@ -231,5 +231,18 @@ function filter_bp_group_has_members( $members_template_has_members, $members_te
 }; 
 add_filter( 'bp_group_has_members', 'filter_bp_group_has_members', 10, 2 ); 
                     
+// Todas las páginas con error van a login
+function private_content_redirect_to_login() {
+  global $wp_query,$wpdb;
+  if (is_404()) {
+    $private = $wpdb->get_row($wp_query->request);
+    $location = wp_login_url($_SERVER["REQUEST_URI"]);
+    if( 'private' == $private->post_status  ) {
+      wp_safe_redirect($location);
+      exit;
+    }
+  }
+}
+add_action('template_redirect', 'private_content_redirect_to_login', 9);
 	
 	

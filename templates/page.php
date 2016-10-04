@@ -64,8 +64,10 @@
 	
 	<?php 
 	// Mostrar en el sidebar las páginas hijas de la página actual
-	//primero cojo el ancestor
+	//primero cojo el ancestor por si estamos en una subpágina.
 	$ancestors = get_post_ancestors( $post->ID );
+	//var_dump($ancestors);
+	
 	
 	// me voy a la última posición del array puesto que es el padre (ancestor)
 	if (count($ancestors)){ 
@@ -75,11 +77,7 @@
 		$printSidebar = 1;
 	}else{
 		$printSidebar = 0;
-		$ancestorTitle = get_the_title();
-		
-		// Busco si esta pagina tiene hijos
-		$children = get_pages('child_of='.$post->ID);
-
+		$parentId = 0;
 	}
 	?>
 	
@@ -87,7 +85,39 @@
 wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); 
 
 if (bp_is_blog_page()) { 
-	if ($printSidebar) include get_template_directory() . "/templates/pagesidebar.php"; 
-}else{
-	include get_template_directory() . "/templates/sidebar.php";
+	if ($printSidebar){ ?>
+
+	<div class="iproSidebar iproSidebarUp col-md-3 col-xs-12">
+		<section class="widget_categories"><h3><?php echo $ancestorTitle; ?></h3>
+		<ul>
+		<?php
+			
+		//Listo todos los títulos de página de la página padre definida $parentId
+		$args = array(
+			'post_parent' => $parentId,
+			'post_type'   => 'any',
+			'orderby' => 'menu_order',
+			'order' => 'ASC',
+			'post_status' => 'any' 
+		); 
+		
+		if ($parentId){ 
+			$childrenPages = get_children( $args );
+			foreach ($childrenPages as $child){
+				echo '<li><a class="pagechild';
+				if ($child->ID == get_the_ID()) echo ' current';
+				echo '" href="' . get_permalink($child->ID) . '">';
+				echo $child->post_title;
+				echo '</a></li>';
+			}
+		}
+			
+		?>
+		</ul>
+		</section>
+	</div>
+		
+		
+	<?php	
+	}
 }
