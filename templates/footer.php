@@ -60,10 +60,9 @@
 				
 			</div>	
 			<div class="col-sm-4 col-xs-12 minpadtop textright medline">
-			<a href=""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/twitter.png"></a>
-			<a href=""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/mail.png"></a>
-			<a href=""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/facebook.png"></a>
-			Contacte
+			<a href="https://twitter.com/eciutatdalba" target="_new"><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/twitter.png"></a>
+			<a href="http://www.escolaciutatdalba.cat/on-som/"><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/mail.png"></a>
+			<a href="https://www.facebook.com/pages/Escola-Ciutat-dAlba/441459199198826" target="_new""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/facebook.png"></a>
 			</div>		
 		</div>
 	</div>
@@ -129,8 +128,10 @@ jQuery( document ).ready(function() {
         jQuery("#cookieAlert #acepto").css("color", colorBoton);
         jQuery("#cookieAlert #acepto").click(function(){
             jQuery("#cookieAlert").hide("fast");
-            document.cookie = 'lacookie=1; path=/';
-            //console.log(document.cookie);
+			//Set expire cookie
+			var now = new Date();
+			now.setTime(now.getTime() + 1 * 360000000);
+			document.cookie = 'lacookie=1; expires=' + now.toUTCString() + '; path=/';
         });
 
         // Link politica cookies

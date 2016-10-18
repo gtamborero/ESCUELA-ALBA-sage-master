@@ -24,12 +24,12 @@
 			$args = array(
 				'post_type'             => 'post',
 				'post_status'           => $showPosts,
-				'posts_per_page'        => '8',
+				'posts_per_page'        => '10',
 				'tax_query' => array(
 					array(
 						'taxonomy'  => 'category',
-						'field'     => 'slug',
-						'terms'     => 'festius', // exclude items media items in the news-cat custom taxonomy
+						'field'     => 'ID',
+						'terms'     => '27', // exclude items media items in the news-cat custom taxonomy
 						'operator'  => 'NOT IN')
 				),
 				

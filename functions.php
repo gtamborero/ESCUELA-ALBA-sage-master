@@ -244,5 +244,11 @@ function private_content_redirect_to_login() {
   }
 }
 add_action('template_redirect', 'private_content_redirect_to_login', 9);
-	
+
+// Desactivar lightbox thickbox por defecto WP
+function my_scripts_method() {
+    wp_deregister_script('thickbox');
+    wp_enqueue_script( 'jquery' );
+}    
+add_action('wp_enqueue_scripts', 'my_scripts_method');
 	
