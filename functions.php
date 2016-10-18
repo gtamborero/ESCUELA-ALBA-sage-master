@@ -205,7 +205,7 @@ add_action('acf/save_post', 'my_acf_save_post', 20);
 function filter_bp_group_has_members( $members_template_has_members, $members_template ) { 
 	//var_dump ($members_template);
 	echo "miembros: ";
-	var_dump ($members_template);
+	//var_dump ($members_template);
 
 	foreach ($members_template as $thekey => $themember){
 		echo "<br />clave: " . $thekey . " valor: " . $themember;
@@ -229,7 +229,7 @@ function filter_bp_group_has_members( $members_template_has_members, $members_te
 	<?php
 	return 0;
 }; 
-add_filter( 'bp_group_has_members', 'filter_bp_group_has_members', 10, 2 ); 
+//add_filter( 'bp_group_has_members', 'filter_bp_group_has_members', 10, 2 ); 
                     
 // Todas las páginas con error van a login
 function private_content_redirect_to_login() {

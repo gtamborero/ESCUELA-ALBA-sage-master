@@ -52,9 +52,8 @@
 					the_row();
 					$data = get_sub_field('arxiu_de_descarrega');
 					echo '
-					<div class="width100 minpadtop minpadbottom">
-					<a target="_NEW" href="' . $data['url'] . '">' . $data['title'] . '</a>
-					</div>';
+					<a target="_NEW" href="' . $data['url'] . '"><div class="width100 minpadtop minpadbottom">
+					<img style="width:30px; margin: 0px 15px;" src="' . get_template_directory_uri() . '/dist/images/download.png">' . $data['title'] . '</div></a>';
 					// Muestro descargas si el primer valor es válido
 					if ($data['url']!="") { echo "<style>div.iproDownloads {display:block;}</style>"; }
 				};
