@@ -11,12 +11,11 @@
 			
 			<?php //Get first group or print groups
 			$groupObject = get_current_user_groups($current_user->ID);
-			if ( $groupObject ['counter'] >1 ) { 
-				echo '<li class="cat-item"><a href="' . home_url("/grups/") . '">Els teus grups</a></li>';
-			}else{
+			if ( $groupObject ['counter'] <=1 ) {
 				echo '<li class="cat-item"><a href="' . home_url("/grups/" . $groupObject['slug']) . '">Grup ' . $groupObject['name'] . '</a></li>';				
 			}
 	?>
+			<li class="cat-item"><a href="<?php echo home_url("/grups/"); ?>">Els teus grups</a></li>
 			<li class="cat-item"><a href="<?php echo bp_loggedin_user_domain() . "profile/change-avatar/"; ?>">El teu perfil</a></li>
 			<li class="cat-item"><a href="<?php echo wp_logout_url(); ?>">Sortir</a></li>
 		</ul>
