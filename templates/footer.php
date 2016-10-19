@@ -55,7 +55,7 @@
 			</div>
 			<div class="col-sm-4 col-xs-12 text-center medline">
 			C/Pere Ferrer, 5, 08195 Sant Cugat del Vallès - 93.578.40.33 - a8064118@xtec.cat<br />
-			<a href="/politica-cookies" class="white">Política de Cookies</a> &nbsp; <a href="/politica-privacitat" class="white">Avis Legal</a>
+			<a href="/politica-cookies" class="white">Política de Cookies</a> &nbsp; <a href="/avis-legal" class="white">Avis Legal</a>
 			
 				
 			</div>	
