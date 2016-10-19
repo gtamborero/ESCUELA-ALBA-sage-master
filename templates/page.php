@@ -6,24 +6,24 @@
 		<?php } ?>
 
 		<div class="width100 textleft minpadtop">
-			<?php 
-			  if (has_post_thumbnail()) { 
+			<?php
+			  if (has_post_thumbnail()) {
 				echo get_the_post_thumbnail(); 
-			  } 
+			  }
 			?>
-			
+
 			<div class="darkgrey minpadtop" ><?php the_content(); ?></div>
-			
+
 			<!-- VIDEO -->
 			<?php $video = get_field('video');
 			if( $video ): ?>
 			<div class="iproTitle color1 minpadtop minpadbottom">Vídeo</div>
-			<div class="width100 bgwhite minpad minpadtop minpadbottom minspacebottom">			
+			<div class="width100 bgwhite minpad minpadtop minpadbottom minspacebottom">
 				<div class="embed-container">
 				<?php the_field('video'); ?>
 				</div>
 			</div>
-			<?php endif; ?> 			
+			<?php endif; ?>
 
 			<!-- GALLERY -->
 			<?php
@@ -41,14 +41,14 @@
 				<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
-			
+
 			<!-- DOWNLOADS -->
 			<div class="iproDownloads iproTitle color1 minpadbottom">Descàrregues</div>
 			<div class="iproDownloads width100 bgwhite minpad minpadtop minpadbottom">
 			<!-- Oculto por defecto descargas -->
-			<style>div.iproDownloads {display:none;}</style>	
+			<style>div.iproDownloads {display:none;}</style>
 			<?php
-				while ( have_rows('descarregas') ) { 
+				while ( have_rows('descarregas') ) {
 					the_row();
 					$data = get_sub_field('arxiu_de_descarrega');
 					echo '
@@ -57,21 +57,21 @@
 					// Muestro descargas si el primer valor es válido
 					if ($data['url']!="") { echo "<style>div.iproDownloads {display:block;}</style>"; }
 				};
-			?>		
+			?>
 			</div>
 		</div>
 
 	</div>
-	
-	<?php 
+
+	<?php
 	// Mostrar en el sidebar las páginas hijas de la página actual
 	//primero cojo el ancestor por si estamos en una subpágina.
 	$ancestors = get_post_ancestors( $post->ID );
 	//var_dump($ancestors);
-	
-	
+
+
 	// me voy a la última posición del array puesto que es el padre (ancestor)
-	if (count($ancestors)){ 
+	if (count($ancestors)){
 		$root = count($ancestors)-1;
 		$parentId = $ancestors[$root];
 		$ancestorTitle = get_the_title($parentId);
@@ -81,9 +81,9 @@
 		$parentId = 0;
 	}
 	?>
-	
-	<?php 
-	wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']); 
+
+	<?php
+	wp_link_pages(['before' => '<nav class="page-nav"><p>' . __('Pages:', 'sage'), 'after' => '</p></nav>']);
 
 	if ($printSidebar){ ?>
 	<div class="iproSidebar iproSidebarUp col-md-3 col-xs-12">
@@ -96,10 +96,10 @@
 			'post_type'   => 'any',
 			'orderby' => 'menu_order',
 			'order' => 'ASC',
-			'post_status' => 'any' 
-		); 
-		
-		if ($parentId){ 
+			'post_status' => 'any'
+		);
+
+		if ($parentId){
 			$childrenPages = get_children( $args );
 			foreach ($childrenPages as $child){
 				echo '<li><a class="pagechild';
@@ -115,14 +115,14 @@
 				echo '" href="/doc-privat/assemblees/">Documents</a></li>';
 			}
 		}
-			
+
 		?>
 		</ul>
 		</section>
 	</div>
-		
-		
-	<?php	
+
+
+	<?php
 	}else{
 		include get_template_directory() . "/templates/sidebar.php";
 	}

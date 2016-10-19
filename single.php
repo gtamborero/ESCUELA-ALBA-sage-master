@@ -6,25 +6,26 @@
 		<div class="width100  color2"><?php $terms = get_the_term_list($post->ID,'category');  echo strip_tags( $terms );?></div>
 		<div class="width100 iproLead minpadtop"><?php the_field('lead'); ?></div>
 		<div class="width100 textleft minpadtop maxsize">
-			<?php 
+			<?php
 				$destacada = get_field('imatge-destacada');
+				$size ="large";
 				if( $destacada ){ ?>
-					<img src="<?php echo $destacada['url']; ?>" alt="<?php echo $destacada['alt']; ?>" />
+					<?php echo wp_get_attachment_image( $destacada, $size ); ?>
 			<?php }	?>
-			
+
 			<div class="darkgrey minpadtop" ><?php the_content(); ?></div>
-			
+
 			<!-- VIDEO -->
 			<?php
 			$video = get_field('video');
 			if( $video ): ?>
 			<div class="iproTitle color1 minpadtop minpadbottom">Vídeo</div>
-			<div class="width100 bgwhite minpad minpadtop minpadbottom minspacebottom">			
+			<div class="width100 bgwhite minpad minpadtop minpadbottom minspacebottom">
 				<div class="embed-container">
 				<?php the_field('video'); ?>
 				</div>
 			</div>
-			<?php endif; ?>			
+			<?php endif; ?>
 
 			<!-- GALLERY -->
 			<?php
@@ -42,14 +43,14 @@
 				<?php endforeach; ?>
 				</div>
 			<?php endif; ?>
-			
+
 			<!-- DOWNLOADS -->
 			<div class="iproDownloads iproTitle color1 minpadbottom">Descàrregues</div>
 			<div class="iproDownloads width100 bgwhite minpad minpadtop minpadbottom">
 			<!-- Oculto por defecto descargas -->
-			<style>div.iproDownloads {display:none;}</style>	
+			<style>div.iproDownloads {display:none;}</style>
 			<?php
-				while ( have_rows('descarregas') ) { 
+				while ( have_rows('descarregas') ) {
 					the_row();
 					$data = get_sub_field('arxiu_de_descarrega');
 					echo '
@@ -58,13 +59,11 @@
 					// Muestro descargas si el primer valor es válido
 					if ($data['url']!="") { echo "<style>div.iproDownloads {display:block;}</style>"; }
 				};
-			?>		
-			</div>				
+			?>
+			</div>
 		</div>
 
 	</div>
 
 <?php include get_template_directory() . "/templates/sidebar.php";
 endwhile; ?>
-
-

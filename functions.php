@@ -45,28 +45,29 @@ function my_remove_admin_menus() {
 add_action('after_setup_theme', 'remove_post_formats', 11);
 function remove_post_formats() {
     remove_theme_support('post-formats');
-} 
+}
 
 function iproRenderNoticias($post){
 ?>
 		<div class="width100">
 
 			<!--<div style="float:right; color:#777;  padding-bottom:8px;"><?php echo get_the_date(); ?></div>-->
-			
+
 			<div class="iproRenderNoticias width100">
 			<a class="fullLink" href="<?php echo get_the_permalink(); ?>"></a>
 			<div class="color2 strong" style="padding:0px 10px 8px 12px"><?php $terms = get_the_term_list($post->ID,'category' , '', ' / ');  echo strip_tags( $terms );?></div>
 				<div class="col-md-5 col-sm-5 col-xs-12 maxsize">
-					<?php 
+					<?php
 						$destacada = get_field('imatge-destacada');
+            $size ="medium";
 						if( $destacada ){ ?>
-							<img src="<?php echo $destacada['url']; ?>" alt="<?php echo $destacada['alt']; ?>" />
+							<?php echo wp_get_attachment_image( $destacada, $size ); ?>
 						<?php }else{
 							echo '<img src="'. get_template_directory_uri() . '/dist/images/thumb-escola-ciutat-alba.jpg' . '" />';
-						} 
+						}
 						?>
-					
-						
+
+
 				</div>
 				<div class="col-md-7 col-sm-5 col-xs-12" style="padding-left:15px;">
 						<div class="medpadtop iproTitle darkgrey" style="text-transform:uppercase;"><?php if ( get_post_status ( $post->ID ) == 'private' ) echo '<img style="width:15px; margin-top:-4px;" src="'. get_template_directory_uri() . '/dist/images/locked.png' . '" />'; ?> <?php echo get_the_title($post->ID); ?></div>
@@ -124,10 +125,10 @@ return $query;
 add_filter('pre_get_posts','searchFilter');
 
 // Allow shortcodes in Contact Form 7
-function shortcodes_in_cf7( $form ) { 
-	$form = do_shortcode( $form ); 
-	return $form; 
-} 
+function shortcodes_in_cf7( $form ) {
+	$form = do_shortcode( $form );
+	return $form;
+}
 add_filter( 'wpcf7_form_elements', 'shortcodes_in_cf7' );
 
 // Update CSS within in Admin
@@ -139,13 +140,13 @@ add_action('admin_enqueue_scripts', 'admin_style');
 // DISABLE ADMIN BAR ON FRONT USERS
 add_filter('show_admin_bar', '__return_false');
 
-// Get current user group slug 
+// Get current user group slug
 // Returns group slug + name + integer total groups subscribed by user
 function get_current_user_groups( $userId ){
 	$group_ids = groups_get_user_groups( $userId );
 	$counter = 0;
-	foreach($group_ids["groups"] as $group_id) { 
-		$slug = groups_get_group(array( 'group_id' => $group_id )) -> slug; 
+	foreach($group_ids["groups"] as $group_id) {
+		$slug = groups_get_group(array( 'group_id' => $group_id )) -> slug;
 		$name = groups_get_group(array( 'group_id' => $group_id )) -> name;
 		$counter++;
 	}
@@ -167,7 +168,7 @@ function my_login_redirect( $redirect_to, $request, $user ) {
 			return $redirect_to;
 		} else {
 			$groupObject = get_current_user_groups($user->ID);
-			if ( $groupObject ['counter'] >1 ) { 
+			if ( $groupObject ['counter'] >1 ) {
 				return home_url('/grups/');
 			}else{
 				return home_url('/grups/' . $groupObject['slug']);
@@ -191,7 +192,7 @@ function my_acf_save_post( $post_id ) {
     $acfDate = get_field('data_dinici', $post_id);
 	$acfPrivacitat = get_field('privacitat', $post_id);
 	//echo $acfDate;
-	//exit (-1);	
+	//exit (-1);
 	$my_post = array();
 	$my_post['ID'] = $post_id;
 	$my_post['post_date'] = $acfDate;
@@ -201,36 +202,36 @@ function my_acf_save_post( $post_id ) {
 add_action('acf/save_post', 'my_acf_save_post', 20);
 
 
-// define the bp_group_has_members callback 
-function filter_bp_group_has_members( $members_template_has_members, $members_template ) { 
+// define the bp_group_has_members callback
+function filter_bp_group_has_members( $members_template_has_members, $members_template ) {
 	//var_dump ($members_template);
 	echo "miembros: ";
 	//var_dump ($members_template);
 
 	foreach ($members_template as $thekey => $themember){
 		echo "<br />clave: " . $thekey . " valor: " . $themember;
-	}	
+	}
 	// $members_template nos devuelve todos los users e información interesante.
 	// Tengo que pillar cada user, ver que tipo de usuario es y solo mostrar a los alumnos
 	// rehacer el array eliminando usuarios que no quiero ... pero no se como devolver esto con este filtro
 	// puedo pintar directamente y listo, solo falta saber pintar el thumb de cada user
 	// BP_Groups_Group_Members_Templates
-	
+
 	//$soloelia = array();
 	//$soloelia = ["ID"]=> string(2) "28" ["user_login"]=> string(4) "elia" ["user_pass"]=> string(34) "$P$BLK9vlLiWEKfqDA2nGTkyOAjtzVRnu1" ["user_nicename"]=> string(4) "elia" ["user_email"]=> string(17) "elia@iproject.cat" ["user_url"]=> string(0) "" ["user_registered"]=> string(19) "2016-09-06 09:40:43" ["user_activation_key"]=> string(0) "" ["user_status"]=> string(1) "0" ["display_name"]=> string(9) "elia elia" ["id"]=> string(2) "28" ["fullname"]=> string(9) "elia elia" ["user_id"]=> int(28) ["is_admin"]=> int(0) ["is_mod"]=> int(0) "";
 	/*$members_template = array (
 		'ID' => "28",
 	);*/
 	?>
-	
+
 	<br />
-	
-	
+
+
 	<?php
 	return 0;
-}; 
-//add_filter( 'bp_group_has_members', 'filter_bp_group_has_members', 10, 2 ); 
-                    
+};
+//add_filter( 'bp_group_has_members', 'filter_bp_group_has_members', 10, 2 );
+
 // Todas las páginas con error van a login
 function private_content_redirect_to_login() {
   global $wp_query,$wpdb;
@@ -249,6 +250,5 @@ add_action('template_redirect', 'private_content_redirect_to_login', 9);
 function my_scripts_method() {
     wp_deregister_script('thickbox');
     wp_enqueue_script( 'jquery' );
-}    
+}
 add_action('wp_enqueue_scripts', 'my_scripts_method');
-	
