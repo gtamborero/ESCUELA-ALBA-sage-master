@@ -8,7 +8,7 @@
 		<div class="width100 textleft minpadtop">
 			<?php
 			  if (has_post_thumbnail()) {
-				echo get_the_post_thumbnail(); 
+				echo get_the_post_thumbnail( '', 'large' );
 			  }
 			?>
 
