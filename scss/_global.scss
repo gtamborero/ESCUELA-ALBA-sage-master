@@ -6,7 +6,7 @@ a {color:$black;}
 a:hover {text-decoration:none;}
 
 .realsize img {width:inherit;}
-.maxsize img {max-width:100%; }
+.maxsize img {max-width:100%; height:auto !important; }
 .valigntop img {vertical-align: top;}
 .valigntop {vertical-align: top;}
 .valigncenter {vertical-align: middle;}
@@ -33,8 +33,8 @@ h3 { color:$color1;}
 .bgwhite {background-color:$white;}
 .bgblack {background-color:$black;}
 .bggrey {background-color:#777;}
-.bglightgrey {background-color:#eee;} 
-.bgdarkgrey {background-color:#222;} 
+.bglightgrey {background-color:#eee;}
+.bgdarkgrey {background-color:#222;}
 
 /* TEXT STYLES */
 .light {font-weight: 200 !important; }
@@ -164,10 +164,10 @@ h3 { color:$color1;}
 }
 
 /* COLOR LINES */
-.color1line { 
+.color1line {
 	border-top: 2px solid $color1; @extend .medspacetop, .medpadbottom;
 }
-.color2line { 
+.color2line {
 	border-top: 2px solid $color2; @extend .medspacetop, .medpadbottom;
 }
 

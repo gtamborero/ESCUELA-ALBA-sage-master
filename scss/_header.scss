@@ -5,6 +5,7 @@
 .navbar-default .navbar-nav a, ul.dropdown-menu {@extend #transition; text-transform:uppercase; }
 
 .navbar-nav li a{padding:20px 26px;}
+.navbar-header img {max-width:100% !important; width:490px;}
 
 @media (max-width:1200px){
 	.navbar-nav li a{padding:22px 16px 17px;}
