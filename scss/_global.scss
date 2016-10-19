@@ -6,7 +6,7 @@ a {color:$black;}
 a:hover {text-decoration:none;}
 
 .realsize img {width:inherit;}
-.maxsize img {max-width:100%; height:auto !important; }
+img {max-width:100%; height:auto !important; }
 .valigntop img {vertical-align: top;}
 .valigntop {vertical-align: top;}
 .valigncenter {vertical-align: middle;}

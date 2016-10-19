@@ -5186,7 +5186,7 @@ a:hover {
 .realsize img {
   width: inherit; }
 
-.maxsize img {
+img {
   max-width: 100%;
   height: auto !important; }
 
@@ -6132,4 +6132,3 @@ ul#groups-list .action {display:none;}
 
 .bpfb_images a.thickbox img {
   margin: 1%; }
-
