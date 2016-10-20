@@ -30,7 +30,7 @@
 			//if (is_user_logged_in()) echo'<br /><a href="' . wp_logout_url() . '">Logout</a>'; 
 			?>
 			<a href="/canco-amunt/"><div class="albaMusica"><img style="width:25px;" src="<?= get_template_directory_uri(); 
-		?>/dist/images/musica.png"> &nbsp;Cancó amunt</div></a>
+		?>/dist/images/musica.png"> &nbsp;Cançó Amunt!</div></a>
 			</div>	
 		</div>
 	</div>	

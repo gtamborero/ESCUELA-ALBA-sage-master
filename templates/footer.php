@@ -2,10 +2,11 @@
 
 	<div class="width100" style="background-color:#fff;">
 		<div class="container darkgrey textcenter minpadtop medpadbottom">
-			<div class="col-sm-8 col-xs-12 minpadtop minspacetop">
-				<div style="width:80%; margin-left:10%; text-align:center;">
+			<div class="col-sm-12 col-xs-12 minpadtop minspacetop">
+				<div style="width:70%; margin-left:15%; text-align:center;">
 				
 				<!-- LOGOS -->
+				<div class="logos-md-style">
 					<a href="https://www.paidos.cat/serveis/Ciutat-d-Alba/Menjador/Menu-del-mes" target="_new">
 					<div class="col-md-6 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/menjador.jpg">
@@ -18,6 +19,8 @@
 						<br /><br />EXTRAESCOLARS
 					</div>
 					</a>
+				</div>
+					
 					<a href="https://www.facebook.com/Comissi%C3%B3-Groga-Escola-Ciutat-dAlba-245535395598564/" target="_new">
 					<div class="col-md-4 col-sm-6 col-xs-6 text-center maxpadbottom">
 						<img style="text-align:center; max-width:100px;" src="<?= get_template_directory_uri(); ?>/dist/images/sos.jpg">
@@ -38,8 +41,15 @@
 					</a>
 				</div>
 			</div>		
-			<div class="col-sm-4 col-xs-12 pull-right">
-				<?php dynamic_sidebar('footer'); ?>
+			<div class="col-sm-6 col-xs-12">
+				<div style="width:90%; margin-left:5%;">
+					<?php dynamic_sidebar('footer'); ?>
+				</div>
+			</div>
+			<div class="col-sm-6 col-xs-12">
+				<div style="width:90%; margin-left:5%;">
+					<?php dynamic_sidebar('footer2'); ?>
+				</div>
 			</div>
 		</div>
 	</div>
@@ -61,8 +71,8 @@
 			</div>	
 			<div class="col-sm-4 col-xs-12 minpadtop textright medline">
 			<a href="https://twitter.com/eciutatdalba" target="_new"><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/twitter.png"></a>
-			<a href="http://www.escolaciutatdalba.cat/on-som/"><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/mail.png"></a>
-			<a href="https://www.facebook.com/pages/Escola-Ciutat-dAlba/441459199198826" target="_new""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/facebook.png"></a>
+			<a href="mailto:a8064118@xtec.cat"><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/mail.png"></a>
+		<!--	<a href="https://www.facebook.com/pages/Escola-Ciutat-dAlba/441459199198826" target="_new""><img style="max-width:25px; margin-right:15px;" src="<?= get_template_directory_uri(); ?>/dist/images/facebook.png"></a> -->
 			</div>		
 		</div>
 	</div>
