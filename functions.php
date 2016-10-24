@@ -74,7 +74,7 @@ function iproRenderNoticias($post){
 						<div class="color1 minpadbottom"><?php echo get_the_date(); ?></div>
 						<!--<div class="iproText color1"><?php if (has_excerpt( $post->ID )) echo get_the_excerpt($post->ID); ?><br />&nbsp;</div>-->
 						<div class="iproText"><?php echo get_the_excerpt(); ?></div>
-						<img style="width:30px; margin-top:10px;" src="<?php echo get_template_directory_uri() . '/dist/images/plus.png'; ?>" />
+						<img class="plusbutton" src="<?php echo get_template_directory_uri() . '/dist/images/plus.png'; ?>" />
 				</div>
 			</div>
 		</div>

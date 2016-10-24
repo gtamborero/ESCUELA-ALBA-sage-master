@@ -5,6 +5,7 @@
 .button { @extend .headbutton; padding:$buttonpad; @extend #transition; }
 .button.circle { border-radius:20px; padding: 6px 13px;}
 .button.bordercircle { border-radius:20px; padding: 6px 13px; border:2px solid $color1; color:$color1; font-weight:bold; background-color:transparent;}
+.plusbutton {width:30px; margin-top:10px; float:right;}
 
 .loginbutton { color: $white; background-color:$color1; @extend #transition; border-radius:0px 0px 50% 50%; margin-top:0px; padding:10px 35px 25px 35px;}
 .loginbutton:hover {background-color:lighten($color1, 20%); cursor:pointer; @extend #transition;}
