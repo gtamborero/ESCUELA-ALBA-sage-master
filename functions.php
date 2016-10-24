@@ -145,17 +145,20 @@ add_filter('show_admin_bar', '__return_false');
 function get_current_user_groups( $userId ){
 	$group_ids = groups_get_user_groups( $userId );
 	$counter = 0;
-	foreach($group_ids["groups"] as $group_id) {
+  //var_dump ($group_ids);
+	if ($group_ids['total'] != 0){
+    foreach($group_ids["groups"] as $group_id) {
 		$slug = groups_get_group(array( 'group_id' => $group_id )) -> slug;
 		$name = groups_get_group(array( 'group_id' => $group_id )) -> name;
 		$counter++;
-	}
-	$object = array (
-		'slug' => $slug,
-		'name' => $name,
-		'counter' => $counter,
-	);
-	return $object;
+	  }
+  	$object = array (
+  		'slug' => $slug,
+  		'name' => $name,
+  		'counter' => $counter,
+  	);
+  return $object;
+  }
 }
 
 // REDIRECT TO Groups ON LOGIN
@@ -237,10 +240,12 @@ function private_content_redirect_to_login() {
   global $wp_query,$wpdb;
   if (is_404()) {
     $private = $wpdb->get_row($wp_query->request);
-    $location = wp_login_url($_SERVER["REQUEST_URI"]);
-    if( 'private' == $private->post_status  ) {
-      wp_safe_redirect($location);
-      exit;
+    if ($private){
+      $location = wp_login_url($_SERVER["REQUEST_URI"]);
+      if( 'private' == $private->post_status  ) {
+        wp_safe_redirect($location);
+        exit;
+      }
     }
   }
 }
