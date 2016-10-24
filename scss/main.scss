@@ -57,7 +57,7 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: bold; }
+  font-weight: bold; 	color:$color1 !important; }
 
 dfn {
   font-style: italic; }
@@ -4882,7 +4882,7 @@ button.close {
 @media print {
   .hidden-print {
     display: none !important; } }
-	
+
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
 // endbower
