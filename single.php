@@ -3,7 +3,7 @@
 	<div class="albaContainer col-md-9 col-xs-12 maxpadtop maxpadbottom">
 		<div class="pull-right text-right"><?= get_the_date(); ?></div>
 		<div class="iproTitle pull-left color1"><?php the_title(); ?></div>
-		<div class="width100  color2"><?php $terms = get_the_term_list($post->ID,'category');  echo strip_tags( $terms );?></div>
+		<div class="color2 clearboth" style="padding:0px 10px 8px 0px"><?php $terms = get_the_term_list($post->ID,'category' , '', ' / ');  echo strip_tags( $terms );?></div>
 		<div class="width100 iproLead minpadtop"><?php the_field('lead'); ?></div>
 		<div class="width100 textleft minpadtop maxsize">
 			<?php

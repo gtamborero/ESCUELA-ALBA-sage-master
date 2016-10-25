@@ -1,3 +1,4 @@
+a {color:darken($color1,10%);}
 .headbutton {
 	display:inline-block; padding:$headbuttonpad; color: $white; background-color:$color1; @extend #transition; font-weight:bold;
 }
@@ -10,7 +11,7 @@
 .loginbutton { color: $white; @extend #transition;
 	background-image: url("/wp-content/themes/sage-master/dist/images/headbutton.png"); background-size: 100%; background-repeat: no-repeat; text-align: center;  margin-top:0px; padding:5px 35px 25px 35px;}
 .loginbutton:hover {background-image: url("/wp-content/themes/sage-master/dist/images/headbuttonover.png"); cursor:pointer; @extend #transition;}
- 
+
 .albaMusica { text-align:center; padding:6%; margin-top:10px;}
 .albaMusica:hover { background-color: #fff; }
 
