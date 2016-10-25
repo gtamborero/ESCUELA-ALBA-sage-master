@@ -16,11 +16,11 @@
 			wp_reset_query();
 
 			// Set post visibility for logged in / out users
-			if (is_user_logged_in()) {
+			//if (is_user_logged_in()) {
 				$showPosts = array('publish','private');
-			}else{
-				$showPosts = 'publish';
-			}
+			//}else{
+				//$showPosts = 'publish';
+			//}
 			$args = array(
 				'post_type'             => 'post',
 				'post_status'           => $showPosts,
