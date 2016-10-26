@@ -9,7 +9,7 @@
 			iproRenderNoticias ($post);
 		endwhile;
 		?>
-		<div class="width100">hola
+		<div class="width100">
 		<?php the_posts_pagination( array(
 				'mid_size' => 3,
 				'prev_text' => 'Anterior',
