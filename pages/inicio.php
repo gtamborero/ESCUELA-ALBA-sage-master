@@ -27,7 +27,7 @@
 			$args = array(
 				'post_type'             => 'post',
 				'post_status'           => $showPosts,
-				'posts_per_page'        => 3,
+				'posts_per_page'        => 6,
 				'paged' 				=> $paged,
 				'tax_query' => array(
 					array(
@@ -55,19 +55,11 @@
 			}
 		?>
 		<div class="width100">
-
-
-<?php the_posts_pagination( array(
-    'mid_size' => 3, 
-    'prev_text' => 'Anterior',
-    'next_text' => 'Següent',
-) ); ?>
-
-
-
-
-
-
+		<?php the_posts_pagination( array(
+		    'mid_size' => 3,
+		    'prev_text' => 'Anterior',
+		    'next_text' => 'Següent',
+		) ); ?>
 		</div>
 	</div>
 	<!-- FIN PRODUCTOS -->
