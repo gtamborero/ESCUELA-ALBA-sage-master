@@ -15,7 +15,7 @@
 				echo '<li class="cat-item"><a href="' . home_url("/grups/" . $groupObject['slug']) . '">Grup ' . $groupObject['name'] . '</a></li>';
 			}
 	?>
-			<li class="cat-item"><a href="<?php echo home_url("/grups/"); ?>">Els teus grups</a></li>
+			<li class="cat-item"><a href="<?php echo home_url("/grups/"); ?>">Els meus grups</a></li>
 			<li class="cat-item"><a href="<?php echo bp_loggedin_user_domain() . "profile/change-avatar/"; ?>">El teu perfil</a></li>
 			<li class="cat-item"><a href="<?php echo wp_logout_url(); ?>">Sortir</a></li>
 		</ul>
