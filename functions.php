@@ -190,7 +190,26 @@ function go_home_on_logout(){
 }
 add_action('wp_logout','go_home_on_logout');
 
+
+
+//dame todos los ids post_type = post y hago loop con ellos
+/*$posts = $wpdb->get_results("
+    SELECT ID
+    FROM $wpdb->posts
+    WHERE post_type = 'post'
+");
+//var_dump ($posts);
+//exit();
+$recorre = 0;
+while ($posts[$recorre]){
+my_acf_save_post($posts[$recorre]->ID);
+$recorre++;
+}
+*/
+
+
 // Guardo el campo fecha del custom field dentro del post
+//add_action('acf/save_post', 'my_acf_save_post', 20);
 function my_acf_save_post( $post_id ) {
   $acfDate = get_field('data_dinici', $post_id);
 	$acfPrivacitat = get_field('privacitat', $post_id);
@@ -205,7 +224,6 @@ function my_acf_save_post( $post_id ) {
 	wp_update_post( $my_post );
 }
 add_action('acf/save_post', 'my_acf_save_post', 20);
-
 
 // define the bp_group_has_members callback
 function filter_bp_group_has_members( $members_template_has_members, $members_template ) {
