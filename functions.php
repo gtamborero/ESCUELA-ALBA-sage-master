@@ -58,14 +58,14 @@ function iproRenderNoticias($post){
 			<div class="color2 strong" style="padding:0px 10px 8px 12px"><?php $terms = get_the_term_list($post->ID,'category' , '', ' / ');  echo strip_tags( $terms );?></div>
 				<div class="col-md-5 col-sm-5 col-xs-12 maxsize">
 					<?php
-						$destacada = get_field('imatge-destacada');
-            $size ="medium";
-						if( $destacada ){ ?>
-							<?php echo wp_get_attachment_image( $destacada, $size ); ?>
+          	//$destacada = get_field('imatge-destacada');
+            //$size ="medium";
+						if( has_post_thumbnail() ){ ?>
+							<?php the_post_thumbnail('medium'); ?>
 						<?php }else{
 							echo '<img src="'. get_template_directory_uri() . '/dist/images/thumb-escola-ciutat-alba.jpg' . '" />';
 						}
-						?>
+					?>
 
 
 				</div>
