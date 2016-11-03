@@ -7,11 +7,13 @@
 		<div class="width100 iproLead minpadtop"><?php the_field('lead'); ?></div>
 		<div class="width100 textleft minpadtop maxsize">
 			<?php
-				$destacada = get_field('imatge-destacada');
-				$size ="large";
-				if( $destacada ){ ?>
-					<?php echo wp_get_attachment_image( $destacada, $size ); ?>
-			<?php }	?>
+				//$destacada = get_field('imatge-destacada');
+				//$size ="large";
+				if( has_post_thumbnail() ){
+					 the_post_thumbnail('large');
+					/* echo wp_get_attachment_image( $destacada, $size ); */
+					}
+			?>
 
 			<div class="darkgrey minpadtop" ><?php the_content(); ?></div>
 
