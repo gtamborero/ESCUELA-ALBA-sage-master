@@ -65,7 +65,9 @@ function buddyViewerRol() {
 		//echo $group_name;
 		if(stristr($group_name, 'ampa') === FALSE) {
 			// No es un grupo del ampa por tanto no puede escribir el usuario
-			echo '<style>.bpfb_form_container, #whats-new-form {display:none;} </style>';
+      if ( !groups_is_user_admin( $current_user->ID, $currentGroupId) && (!groups_is_user_mod( $current_user->ID, $currentGroupId))){
+			     echo '<style>.bpfb_form_container, #whats-new-form {display:none;} </style>';
+      }
 		}
 	}
 }
