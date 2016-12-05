@@ -37,6 +37,41 @@ function my_deregister_scripts(){
 }
 add_action( 'wp_footer', 'my_deregister_scripts' );
 
+// funcion para permitir o no escribir a usuarios predeterminados
+// BUDDY FUNCTION to get actual user rol name
+function buddyViewerRol() {
+	global $current_user;
+	$user_roles = $current_user->roles;
+	$user_role = array_shift($user_roles);
+
+	//echo $user_role;
+	// casos especiales:
+	// en general si el user role es alumno plus o ampa o profesor o admin se puede escribir en el grupo
+	// por el contrario si es padre o alumno no puede escribir.
+	// el caso complejo es que ampa puede escribir solo si tiene AMPA delante del nombre del grupo.
+  //echo "user: " . $current_user->ID;
+  $currentGroupId = bp_get_current_group_id();
+ //echo groups_is_user_admin( $current_user, bp_get_current_group_id()
+ //echo groups_is_user_admin( $current_user->ID, $currentGroupId);
+
+	if (($user_role == 'alumne') || ($user_role == 'mare-pare')){
+    if ( !groups_is_user_admin( $current_user->ID, $currentGroupId) && (!groups_is_user_mod( $current_user->ID, $currentGroupId))){
+		    echo '<style>.bpfb_form_container, #whats-new-form {display:none;} </style>';
+    }
+	}
+
+	if ($user_role == 'ampa'){
+		$group_name = bp_get_current_group_name();
+		//echo $group_name;
+		if(stristr($group_name, 'ampa') === FALSE) {
+			// No es un grupo del ampa por tanto no puede escribir el usuario
+			echo '<style>.bpfb_form_container, #whats-new-form {display:none;} </style>';
+		}
+	}
+}
+add_action( 'get_header', 'buddyViewerRol' );
+
+
 // EXCERPT LENGHT
 function custom_excerpt_length( $length ) {
 	return 20;
