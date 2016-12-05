@@ -9,13 +9,18 @@
 	<section class="widget_categories"><h3>Hola <?php echo $current_user->display_name; ?>!</h3>
 		<ul>
 
-			<?php //Get first group or print groups
-			$groupObject = get_current_user_groups($current_user->ID);
-			if ( $groupObject ['counter'] ==1 ) {
-				echo '<li class="cat-item"><a href="' . home_url("/grups/" . $groupObject['slug']) . '">Grup ' . $groupObject['name'] . '</a></li>';
+			<?php
+			//$groupObject = get_current_user_groups($current_user->ID);
+			// LOOP GROUP START
+			$groupObject = BP_Groups_Member::get_group_ids( $current_user->ID );
+			$group = $groupObject["groups"];
+			foreach ((array) $group as $value){
+				$group = groups_get_group( array( 'group_id' => $value ) );
+				echo '<li class="cat-item"><a href="' . home_url("/grups/" . $group->slug) . '">Grup ' . $group->name . '</a></li>';
 			}
+			// LOOP END
 	?>
-			<li class="cat-item"><a href="<?php echo home_url("/grups/"); ?>">Els meus grups</a></li>
+			<li class="cat-item"><a href="<?php echo home_url("/grups/"); ?>">TOTS ELS GRUPS</a></li>
 			<li class="cat-item"><a href="<?php echo bp_loggedin_user_domain() . "profile/change-avatar/"; ?>">El teu perfil</a></li>
 			<li class="cat-item"><a href="<?php echo wp_logout_url(); ?>">Sortir</a></li>
 		</ul>

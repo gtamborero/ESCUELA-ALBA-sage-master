@@ -163,6 +163,8 @@ h1,h2,h3,h4,h5,h6 { color:$color1;}
 	box-shadow:         -3px 3px 9px 2px #aaa;
 }
 
+a { outline: none !important; }
+
 /* COLOR LINES */
 .color1line {
 	border-top: 2px solid $color1; @extend .medspacetop, .medpadbottom;
