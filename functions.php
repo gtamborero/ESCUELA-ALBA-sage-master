@@ -37,6 +37,15 @@ function my_deregister_scripts(){
 }
 add_action( 'wp_footer', 'my_deregister_scripts' );
 
+// Eliminar jquery migrate
+function dequeue_jquery_migrate( &$scripts){
+	if(!is_admin()){
+		$scripts->remove( 'jquery');
+		$scripts->add( 'jquery', false, array( 'jquery-core' ), '1.10.2' );
+	}
+}
+add_filter( 'wp_default_scripts', 'dequeue_jquery_migrate' );
+
 // funcion para permitir o no escribir a usuarios predeterminados
 // BUDDY FUNCTION to get actual user rol name
 function buddyViewerRol() {
