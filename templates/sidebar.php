@@ -21,7 +21,8 @@
 			// LOOP END
 	?>
 			<li class="cat-item"><a href="<?php echo home_url("/grups/"); ?>">TOTS ELS GRUPS</a></li>
-			<li class="cat-item"><a href="<?php echo bp_loggedin_user_domain() . "profile/change-avatar/"; ?>">El teu perfil</a></li>
+			<li class="cat-item"><a href="<?php echo bp_loggedin_user_domain() . "settings/"; ?>">Canviar contrasenya</a></li>
+			<li class="cat-item"><a href="<?php echo bp_loggedin_user_domain() . "profile/change-avatar/"; ?>">Canviar foto perfil</a></li>
 			<li class="cat-item"><a href="<?php echo wp_logout_url(); ?>">Sortir</a></li>
 		</ul>
 	</section>

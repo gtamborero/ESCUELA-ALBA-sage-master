@@ -85,7 +85,7 @@ add_action( 'get_header', 'buddyViewerRol' );
 
 // EXCERPT LENGHT
 function custom_excerpt_length( $length ) {
-	return 20;
+	return 80;
 }
 add_filter( 'excerpt_length', 'custom_excerpt_length', 999 );
 
