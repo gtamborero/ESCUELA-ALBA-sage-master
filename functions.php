@@ -331,3 +331,29 @@ function my_scripts_method() {
     wp_enqueue_script( 'jquery' );
 }
 add_action('wp_enqueue_scripts', 'my_scripts_method');
+
+
+/**
+* Format WordPress User's "Display Name" to Full Name on Login
+* ------------------------------------------------------------------------------
+*/
+
+add_action( 'wp_login', 'wpse_9326315_format_user_display_name_on_login' );
+
+function wpse_9326315_format_user_display_name_on_login( $username ) {
+    $user = get_user_by( 'login', $username );
+
+    $first_name = get_user_meta( $user->ID, 'first_name', true );
+    $last_name = get_user_meta( $user->ID, 'last_name', true );
+
+    $full_name = trim( $first_name . ' ' . $last_name );
+
+    if ( ! empty( $full_name ) && ( $user->data->display_name != $full_name ) ) {
+        $userdata = array(
+            'ID' => $user->ID,
+            'display_name' => $full_name,
+        );
+
+        wp_update_user( $userdata );
+    }
+}
