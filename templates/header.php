@@ -29,8 +29,8 @@
 			if (!is_user_logged_in()) echo'<a href="/wp-admin"><div class="loginbutton">Accés<br />usuaris</div></a>';
 			//if (is_user_logged_in()) echo'<br /><a href="' . wp_logout_url() . '">Logout</a>';
 			?>
-			<a href="/canco-amunt/"><div class="albaMusica"><img style="width:25px;" src="<?= get_template_directory_uri();
-		?>/dist/images/musica.png"> &nbsp;Cançó Amunt!</div></a>
+			<a href="/canco-amunt/"><div class="albaMusica" style="padding-left: 0px; padding-right:0px;"><img style="width:18px; margin-top:-3px;" src="<?= get_template_directory_uri();
+		?>/dist/images/musica.png"> Cançó Amunt!</div></a>
 			</div>
 		</div>
 	</div>
@@ -50,3 +50,12 @@
 	</div>
 
 </header>
+<?php
+if (is_front_page()) { ?>
+<style>
+@media (max-width:768px){
+	#homeSlideECA{ display:none;}
+}
+</style>
+<div id="homeSlideECA"><img src="//www.escolaciutatdalba.cat/wp-content/uploads/2018/09/escola-ciutat-alba.jpg" style="width:100%; height:auto;"></div>
+<?php } ?>
