@@ -3,6 +3,8 @@
 	<?php
 	if (is_user_logged_in()){
 	$current_user = wp_get_current_user();
+
+    /*
 	?>
 
 	<!-- USER FAST ACCESS -->
@@ -27,7 +29,8 @@
 		</ul>
 	</section>
 
-	<?php }
+        <?php
+    */ }
 	if (current_user_can('edit_posts')){ ?>
 
 	<!-- User post system -->
@@ -79,8 +82,8 @@
 	<?php
 	// Muestro el sidebar si no estoy en una página normal y si no estoy dentro de buddy press
 	// No tiene sentido mostrar agenda y categorias dentro de buddy
-	if (bp_is_blog_page()) {
+	/*if (bp_is_blog_page()) { */
 		dynamic_sidebar('sidebar-primary');
-	}
+	/* }*/
 	?>
 </div>

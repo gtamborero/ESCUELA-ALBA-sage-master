@@ -33,9 +33,3 @@ ul.nav li.dropdown:hover ul.dropdown-menu{ display: block;  }
 .dropdown-menu a {color:#666 !important;}
 
 .dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {background-color: lighten($color1,25%);}
-
-@media (max-width:760px) {
-	.albaMusica {display:none;}
-	.loginbutton {min-width:140px;}
-	.navbar-header img {width:80%;}
-}
