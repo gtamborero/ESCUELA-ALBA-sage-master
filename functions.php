@@ -357,14 +357,3 @@ function wpse_9326315_format_user_display_name_on_login( $username ) {
         wp_update_user( $userdata );
     }
 }
-
-// DEQUEUE GUTENBERG STYLES FOR FRONT
-function my_deregister_scripts_and_styles() {
-    wp_deregister_script('wp-util'); //deregister script
-	wp_deregister_script('underscore'); 
-	wp_dequeue_style( 'wp-block-library'); //deregister style
-	wp_dequeue_style( 'wc-block-style' ); 
-	wp_dequeue_style( 'wp-block-library-theme' );
-	wp_dequeue_style( 'animate' ); 
-}
-add_action( 'wp_enqueue_scripts', 'my_deregister_scripts_and_styles', 9999);
